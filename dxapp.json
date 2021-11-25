@@ -1,6 +1,6 @@
 {
-  "name": "TSO500Reporter_v1.0.0",
-  "title": "TSO500Reporter_v1.0.0",
+  "name": "eggd_TSO500reporter",
+  "title": "eggd_TSO500reporter",
   "summary": "DNAnexus app of TSO500Reporter",
   "dxapi": "1.0.0",
   "properties": {
@@ -27,13 +27,6 @@
         "*.tsv"
       ],
       "help": "Array of files containing combined variant output statistics"
-    },
-    {
-      "name": "output",
-      "label": "Directory to store output",
-      "class": "string",
-      "optional": false,
-      "default": "report"
     }
   ],
   "outputSpec": [
@@ -66,7 +59,7 @@
     "file": "src/run.sh",
     "distribution": "Ubuntu",
     "release": "20.04",
-    "version": "1"
+    "version": "0"
   },
   "access": {
     "project": "CONTRIBUTE"
