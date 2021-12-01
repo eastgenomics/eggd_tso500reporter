@@ -1,12 +1,21 @@
 {
-  "name": "eggd_TSO500reporter",
-  "title": "eggd_TSO500reporter",
-  "summary": "DNAnexus app of TSO500Reporter",
+  "name": "eggd_tso500reporter",
+  "title": "eggd_tso500reporter",
+  "summary": "DNAnexus app for TSO500Reporter",
+  "version": "1.0.0",
+  "billTo": "org-emee_1",
   "dxapi": "1.0.0",
   "properties": {
     "githubRelease": "v1.0.0",
     "TSO500ReporterRelease": "v1.0.0"
     },
+  "developers": [
+    "user-spaul4",
+    "org-emee_1"
+  ],
+  "authorizedUsers": [
+    "org-emee_1"
+  ],
   "inputSpec": [
     {
       "name": "samplesheet",
