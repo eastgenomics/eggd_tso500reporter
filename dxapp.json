@@ -29,13 +29,13 @@
     },
     {
       "name": "combined_variant_output_files",
-      "label": "Array of files containing combined variant output statistics",
+      "label": "Array of CombinedVariantOutput.tsv files from TSO500 local app run",
       "class": "array:file",
       "optional": false,
       "patterns": [
         "*.tsv"
       ],
-      "help": "Array of files containing combined variant output statistics"
+      "help": "Array of CombinedVariantOutput.tsv files from TSO500 local app run"
     }
   ],
   "outputSpec": [
@@ -44,7 +44,7 @@
       "label": "HTML report",
       "class": "file",
       "patterns": [
-        "report.html"
+        "*report.html"
       ],
       "help": "HTML report containing MSI/TMB statistics"
     },
@@ -53,7 +53,7 @@
       "label": "PDF report",
       "class": "file",
       "patterns": [
-        "report.pdf"
+        "*report.pdf"
       ],
       "help": "PDF report containing MSI/TMB statistics"
     }
@@ -61,7 +61,7 @@
   "runSpec": {
     "timeoutPolicy": {
       "*": {
-        "minutes": 15
+        "minutes": 30
       }
     },
     "interpreter": "bash",
