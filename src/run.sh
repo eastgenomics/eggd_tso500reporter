@@ -44,17 +44,14 @@ main() {
 
     # C: GENERATE REPORT
     echo "Running app..."
-    time python3 -m tso500reporter --pdf --samplesheet $(find ~/in/ -name *.csv) --variant-data $(find ~/in/ -name *CombinedVariantOutput.tsv | paste -sd' ')
+    time python3 -m tso500reporter --samplesheet $(find ~/in/ -name *.csv) --variant-data $(find ~/in/ -name *CombinedVariantOutput.tsv | paste -sd' ')
 
 
     # D: UPLOAD RESULT TO DNANEXUS
     echo "Completed. Uploading files..."
 
-
     ## Fetch output report files
     HTML_REPORT=$(find . -name report.html)
-    PDF_REPORT=$(find . -name report.pdf)
-
 
     ## Rename report
     ### extract run name from a CombinedVariantOutput file
@@ -66,18 +63,15 @@ main() {
 
     ### generate report name
     REPORT_NAME="TMB_MSI.${RUN_NAME}.${TIMESTAMP}.report.html"
-    
+
     ### rename report
     HTML_REPORT_DIR=$(dirname $HTML_REPORT)
     mv $HTML_REPORT ${HTML_REPORT_DIR}/${REPORT_NAME}
     HTML_REPORT=${HTML_REPORT_DIR}/${REPORT_NAME}
 
-
     ## Upload files to DNANexus
     HTML_REPORT_ID=$(dx upload $HTML_REPORT --brief)
-    PDF_REPORT_ID=$(dx upload $PDF_REPORT --brief)
 
     ## Add workflow-output tag from outputSpec to files
     dx-jobutil-add-output report_html "$HTML_REPORT_ID" --class=file
-    dx-jobutil-add-output report_pdf "$PDF_REPORT_ID" --class=file
 }

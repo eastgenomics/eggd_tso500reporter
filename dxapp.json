@@ -47,15 +47,6 @@
         "*report.html"
       ],
       "help": "HTML report containing MSI/TMB statistics"
-    },
-    {
-      "name": "report_pdf",
-      "label": "PDF report",
-      "class": "file",
-      "patterns": [
-        "*report.pdf"
-      ],
-      "help": "PDF report containing MSI/TMB statistics"
     }
   ],
   "runSpec": {

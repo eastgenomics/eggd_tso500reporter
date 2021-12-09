@@ -23,6 +23,6 @@ dx run app-eggd_tso500reporter --instance-type mem1_ssd1_v2_x2 -isamplesheet=${S
 
 ## What does this app output?
 
-HTML and PDF reports of TMB and MSI plots/data
+An HTML report of TMB and MSI plots and data.
 
 #### This app was made by EMEE GLH
