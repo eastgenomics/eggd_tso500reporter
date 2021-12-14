@@ -58,11 +58,8 @@ main() {
     CVO_FILES=($(find . -name *.tsv))
     RUN_NAME=$(grep "Run Name" ${CVO_FILES[1]} | sed -E "s/^[^0-9]+//" | sed -E "s/\s//g")
 
-    ### make timestamp
-    TIMESTAMP=$(date +'%Y-%b-%d_%H:%M:%S')
-
     ### generate report name
-    REPORT_NAME="TMB_MSI.${RUN_NAME}.${TIMESTAMP}.report.html"
+    REPORT_NAME="${RUN_NAME}.tmb_msi.report.html"
 
     ### rename report
     HTML_REPORT_DIR=$(dirname $HTML_REPORT)
