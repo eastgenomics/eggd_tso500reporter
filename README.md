@@ -18,7 +18,7 @@ The app is intended to be a component of the Helios solid-cancer bioinformatics 
 #### Example:
 
 ```
-dx run app-eggd_tso500reporter -isamplesheet=${SAMPLESHEET_FILE_ID} -icombined_variant_output_files=${COMBINED_VARIANT_OUTPUT_FILE_1_ID} icombined_variant_output_files=${CVO_FILE_2_ID} [...]
+dx run app-eggd_tso500reporter -isamplesheet=${SAMPLESHEET_FILE_ID} -icombined_variant_output_files=${COMBINED_VARIANT_OUTPUT_FILE_1_ID} -icombined_variant_output_files=${CVO_FILE_2_ID} [...]
 ```
 
 ## What does this app output?
