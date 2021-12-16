@@ -1,0 +1,76 @@
+{
+  "name": "eggd_tso500reporter",
+  "title": "eggd_tso500reporter",
+  "summary": "DNAnexus app for TSO500Reporter",
+  "version": "1.0.0",
+  "billTo": "org-emee_1",
+  "dxapi": "1.0.0",
+  "properties": {
+    "githubRelease": "v1.0.0",
+    "TSO500ReporterRelease": "v1.0.0"
+    },
+  "developers": [
+    "user-spaul4",
+    "org-emee_1"
+  ],
+  "authorizedUsers": [
+    "org-emee_1"
+  ],
+  "inputSpec": [
+    {
+      "name": "samplesheet",
+      "label": "SampleSheet.csv file from TSO500 local app run",
+      "class": "file",
+      "optional": false,
+      "patterns": [
+        "*.csv"
+      ],
+      "help": "SampleSheet.csv file from TSO500 local app run"
+    },
+    {
+      "name": "combined_variant_output_files",
+      "label": "Array of CombinedVariantOutput.tsv files from TSO500 local app run",
+      "class": "array:file",
+      "optional": false,
+      "patterns": [
+        "*.tsv"
+      ],
+      "help": "Array of CombinedVariantOutput.tsv files from TSO500 local app run"
+    }
+  ],
+  "outputSpec": [
+    {
+      "name": "report_html",
+      "label": "HTML report",
+      "class": "file",
+      "patterns": [
+        "*report.html"
+      ],
+      "help": "HTML report containing MSI/TMB statistics"
+    }
+  ],
+  "runSpec": {
+    "timeoutPolicy": {
+      "*": {
+        "minutes": 30
+      }
+    },
+    "interpreter": "bash",
+    "file": "src/run.sh",
+    "distribution": "Ubuntu",
+    "release": "20.04",
+    "version": "0"
+  },
+  "access": {
+    "project": "CONTRIBUTE"
+  },
+  "regionalOptions": {
+    "aws:eu-central-1": {
+      "systemRequirements": {
+        "*": {
+          "instanceType": "mem1_ssd1_v2_x2"
+        }
+      }
+    }
+  }
+}
